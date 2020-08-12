@@ -1,0 +1,44 @@
+-- Extenson are created to wrap objects into single unit to make them managable. 
+create extension adminpack schema pg_catalog version "1.0"; 
+
+
+-- Joins in table. 
+* left join 
+* right join 
+* full outer join 
+* cross join 
+* natural join 
+
+
+
+-- Postgresql natural join. 
+* natural join create implicit join based on the matching column between two table
+* natural join can be (inner, left, right) join. 
+* postgresql will use the inner join by default. 
+
+
+-- Natural join. 
+select * from table1 natural join table2 
+
+-- Inner jon 
+select * from tblpolicy detail inner join tblagent using(AgentCode) -- AgentCode is the common column between two tables. 
+select * from tblpolicy inner join tblagent on tblpolicy.agentcode = tblagent.agentcode 
+
+
+-- cross join.
+  * query all the data combinly from both tables. 
+  * doesn't require the table to have matching columns. 
+  
+  select * from tbl1 cross join tbl2 
+  
+  
+  -- left join
+  * Return the records from all records from left join and the matching records from the right table. 
+  
+  
+  -- full outer join
+  select * from table1 full outer join table2 on table1.id = table2.id 
+  where table1.column2 is NULL
+  order by column asc
+  
+  
