@@ -41,4 +41,44 @@ select * from tblpolicy inner join tblagent on tblpolicy.agentcode = tblagent.ag
   where table1.column2 is NULL
   order by column asc
   
+  -- Triggers ---
+     * SQL trigger is a function that automatically invoked when an event(insert, update, delete, truncate) associated with a table occours. 
+     * Trigger is a user defined function that binds with table. 
+     * Trigger can fired before or after event is occoured
+     * Types of trigger
+        * Row tigger: If a trigger that effects 20 rows, row based trigger call 20 times. 
+        * Statement trigger. : Invoked just one time, 
+     * Benfits: Maintain data integrity rules, check activities of an application
+     * By default, postgresql fires triggers for the truncate event. 
+     * Postgresql allow to define statement level triggers in views. 
+     * Trigger function is created using create function statemnet
+     * Trigger function is bind to table using create statement. 
+     * Trigger function does not take arguments and has return value trigger. 
+     
+     
+     Example
+     ........
+     a. creating trigger functon
+     create function trigger_function() return trigger AS 
+     
+     b. creating trigger. 
+     create tigger trigger_name  { before | after | instead of | | {EVENT | OR } on table_name [ for [each] { row | statement } ] execute
+      procedure trigger_functon 
+      
+     Three step process to create a trigger 
+     
+      1. Create a table 
+      2. Define a function 
+      3. Create the trigger
+      
+      -- Create tables
+      create table employees( id int4 primary key not null, first_name varchar(40) not null, last_name varchar(40) not null); 
+      create table employee_audits ( id int4 primary key not null, employee_id int4 not null, last_name varchar(40) not null, changed_on timestamp(6) not null   )
+     
+        
+      -- Create trigger function. 
+      -- Let's create a trigger function that logs changes in last name, 
+      
+  
+  
   
