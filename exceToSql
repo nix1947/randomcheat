@@ -1,2 +1,5 @@
 // Reference: https://stackoverflow.com/questions/16818796/generate-sql-insert-script-from-excel-worksheet/16819629
 ="INSERT INTO grievance_category VALUES('"&A2&"','"&B2&"','"&C2&"',  '"&D2&"',    '"&E2&"', '"&F2&"', '"&G2&"', '"&H2&"' );"
+
+// Update query
+="update tblgroupendowment set name = '" & A2 & "' where policyNo = '" & B2 & "'"
